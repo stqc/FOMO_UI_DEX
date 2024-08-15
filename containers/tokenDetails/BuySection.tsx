@@ -62,11 +62,11 @@ const BuySection = () => {
 
   useEffect(() => {
     if (USDPerToken) {
-      console.log(
-        formatEther(USDPerToken, "wei"),
-        // formatEther(showPoolAddress as bigint, "wei"),
-        "USDPerToken"
-      );
+      // console.log(
+      //   formatEther(USDPerToken, "wei"),
+      //   // formatEther(showPoolAddress as bigint, "wei"),
+      //   "USDPerToken"
+      // );
     }
   }, [USDPerToken]);
 
