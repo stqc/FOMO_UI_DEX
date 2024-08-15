@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+@layer components {
+
+  /* primary (purple) button */
+  .btn-base {
+    @apply flex items-center justify-center gap-[10px] rounded-[9px] border px-6 py-2 text-center text-[13px] font-medium disabled:cursor-not-allowed h-[40px];
+  }
+
+  .btn {
+    @apply btn-base;
+    @apply btn-base text-neutral-0 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn-base border-purple-400 bg-gradient-to-r from-purple-600 to-purple-500 text-neutral-0;
+  }
+
+  /* primary (purple) outline button */
+  .btn-primary-outline {
+    @apply btn-base border-2 border-purple-400 text-purple-400 transition-colors disabled:opacity-[0.3];
+  }
+
+  .btn-primary-outline:hover {
+    @apply bg-purple-100;
+  }
+
+  .btn-primary-outline:disabled {
+    @apply cursor-not-allowed border-purple-100 text-purple-100;
+  }
+
+  /* primary (purple) text button */
+  .btn-primary-text {
+    @apply text-center font-medium text-purple-400 transition-colors;
+  }
+
+  .btn-primary-text:hover {
+    @apply text-purple-500;
+  }
+
+  .btn-primary-text:disabled {
+    @apply cursor-not-allowed border-purple-100 text-purple-100 opacity-[0.5];
+  }
+
+  .container {
+    @apply max-w-[1600px] mx-auto
+  }
+
+  /* border gradient */
+  .gradient-border {
+    /* Adjust based on desired border thickness */
+    background: linear-gradient(to right, #FFFFFF 33%, #003CFF 33%, #003CFF 66%, #FFFFFF 66%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+  }
+
+  .bg-custom-radial {
+    background-image: radial-gradient(rgba(0, 60, 255, 0.8) 40%, rgba(0, 60, 255, 0.8) 40%, rgba(0, 60, 255, 0.8) 40%);
+  }
+
+  .bg-custom-radial2 {
+    background-image: radial-gradient(rgba(0, 60, 255, 0.8), rgba(0, 60, 255, 0.8), rgba(0, 60, 255, 0.32));
+  }
+
+
+  .border-gradient {
+    border: 1px solid;
+    border-image: linear-gradient(#4A4A4A 0%, #003CFF 50%, #4A4A4A 100%);
+    border-image-slice: 1;
+    border-radius: 100px;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+
+  .border-one {
+    box-shadow: 3px -11px 42px 0px rgba(17, 30, 49, 0.97) inset;
+    -webkit-box-shadow: 3px -11px 42px 0px rgba(17, 30, 49, 0.97) inset;
+    -moz-box-shadow: 3px -11px 42px 0px rgba(17, 30, 49, 0.97) inset;
+    @apply border-[1px] border-[#283356]
+  }
+
+  .custom-blur {
+    backdrop-filter: blur(4px);
+    /* Adjust the blur value as needed */
+  }
+
+  .nav-bg-gradient {
+    @apply bg-gradient-to-b from-[#1B488B] to-[#111111];
+  }
+
+  .bg-linear-gradient {
+    background: rgb(19, 21, 23);
+    background: linear-gradient(180deg, rgba(19, 21, 23, 1) 0%, rgba(19, 21, 23, 1) 12%, rgba(21, 43, 78, 1) 60%);
+  }
+
+  .bg-linear-gradient-inactive {
+    background: rgb(18, 23, 29);
+    background: linear-gradient(180deg, rgba(18, 23, 29, 1) 26%, rgba(18, 27, 40, 1) 57%);
+  }
+
+  .bg-green-radial-gradient {
+    background: rgb(15, 168, 109);
+    background: linear-gradient(106deg, rgba(15, 168, 109, 1) 4%, rgba(11, 79, 53, 1) 85%);
+  }
+
+  .input-linear-gradient {
+    background: rgb(23, 25, 30);
+    background: linear-gradient(180deg, rgba(23, 25, 30, 1) 4%, rgba(20, 52, 86, 1) 85%);
+  }
+
+  .btn-bg-red-linear-gradient {
+    background: rgb(226, 63, 86);
+    background: linear-gradient(63deg, rgba(226, 63, 86, 1) 4%, rgba(107, 31, 41, 1) 85%);
+  }
+
+  .border-variant-one {
+    border-color: rgba(71, 167, 255, 0.56);
+    @apply border-[1px]
+  }
+
+  .border-variant-two {
+    @apply border-[#49494B] border-[1px]
+  }
+
+  .btn-variant-one {
+    background: rgb(5, 58, 234);
+    background: linear-gradient(99deg, rgba(5, 58, 234, 1) 4%, rgba(17, 54, 152, 1) 85%);
+    @apply text-neutral-0 rounded-[4px] py-[8px]
+  }
+
+  .btn-variant-two {
+    @apply bg-[#2D4C7A] text-neutral-0 py-[15px] w-[170px] text-center rounded-[4px] text-[14px];
+    box-shadow: 0px 0px 14px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 14px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 14px -1px rgba(0, 0, 0, 0.75);
+  }
+
+  .modal-bg-one {
+    background: rgb(19, 20, 24);
+    background: linear-gradient(180deg, rgba(19, 20, 24, 1) 28%, rgba(26, 59, 109, 1) 92%);
+  }
+}
